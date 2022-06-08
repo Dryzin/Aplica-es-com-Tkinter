@@ -8,6 +8,64 @@ fr2 = Frame(root)
 fr3 = Frame(root)
 
 
+
+
+root.grid_rowconfigure(0,  weight=1)
+root.grid_rowconfigure(1,  weight=1)
+root.grid_rowconfigure(2,  weight=1)
+root.grid_rowconfigure(3,  weight=1)
+root.grid_rowconfigure(4,  weight=1)
+root.grid_rowconfigure(5,  weight=1)
+
+root.grid_columnconfigure(0, weight=1)
+root.grid_columnconfigure(1, weight=1)
+root.grid_columnconfigure(2, weight=1)
+
+#---
+fr1.grid_rowconfigure(0,  weight=1)
+fr1.grid_rowconfigure(1,  weight=1)
+fr1.grid_rowconfigure(2,  weight=1)
+fr1.grid_rowconfigure(3,  weight=1)
+fr1.grid_rowconfigure(4,  weight=1)
+fr1.grid_rowconfigure(5,  weight=1)
+
+fr1.grid_columnconfigure(0, weight=1)
+fr1.grid_columnconfigure(1, weight=1)
+fr1.grid_columnconfigure(2, weight=1)
+
+#---
+fr2.grid_rowconfigure(0,  weight=1)
+fr2.grid_rowconfigure(1,  weight=1)
+fr2.grid_rowconfigure(2,  weight=1)
+fr2.grid_rowconfigure(3,  weight=1)
+fr2.grid_rowconfigure(4,  weight=1)
+fr2.grid_rowconfigure(5,  weight=1)
+
+fr2.grid_columnconfigure(0, weight=1)
+fr2.grid_columnconfigure(1, weight=1)
+fr2.grid_columnconfigure(2, weight=1)
+
+#---
+
+fr3.grid_rowconfigure(0,  weight=1)
+fr3.grid_rowconfigure(1,  weight=1)
+fr3.grid_rowconfigure(2,  weight=1)
+fr3.grid_rowconfigure(3,  weight=1)
+fr3.grid_rowconfigure(4,  weight=1)
+fr3.grid_rowconfigure(5,  weight=1)
+
+fr3.grid_columnconfigure(0, weight=1)
+fr3.grid_columnconfigure(1, weight=1)
+fr3.grid_columnconfigure(2, weight=1)
+
+
+#geometria
+root.geometry('800x300')
+
+#root.minsize(width=800, height=300)
+#root.maxsize(width=1000, height=400)
+
+
 #root.configure(background= "white")
 root.title("Atividade Frame")
 
@@ -54,7 +112,7 @@ bt2 = Button(fr3, text="Limpar Dados", font="Arial 16")
 #---Configuração do Frame---
 
 fr1.grid(row=0, column=0)
-fr2.grid(row=0, column=1, pady=10)
+fr2.grid(row=0, column=1, pady=46)
 fr3.grid(row=1, column=0, sticky=EW)
 
 #organizar os widgets
