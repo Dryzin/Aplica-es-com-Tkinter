@@ -11,8 +11,55 @@ fr4 = Frame(root)
 def cheke():
     bt8["text"] = "Salvo"
 
-def limpar():
-    in1["text"] = ''
+
+#Função Tratar telefone
+def fone(event=None):    
+    x=in4.get().replace('-','','()').replace('-', '','()')[:8]
+    y=''
+    if event.keysym.lower() == "backspace": return
+
+    for i in range(len(x)):
+        if x[i] in '0123456789':
+            if i in [0,1]:
+                '('
+            else:
+                y+=x[i]
+    in4.delete(0, 'end')
+    in4.insert(0, y)
+
+#Função Tratar data
+def data(event=None):    
+    x=in4.get().replace('/','').replace('/', '')[:8]
+    y=''
+    if event.keysym.lower() == "backspace": return
+
+    for i in range(len(x)):
+        if x[i] in '0123456789':
+            if i in [1,3]:
+                y+=x[i] + '/'
+            else:
+                y+=x[i]
+    in4.delete(0, 'end')
+    in4.insert(0, y)
+
+
+#Função Tratar cpf
+def capitura(event=None):    
+    x=in3.get().replace('.','').replace('-', '')[:11]
+    y=''
+    if event.keysym.lower() == "backspace": return
+
+    for i in range(len(x)):
+        if x[i] in '0123456789':
+            if i in [2,5]:
+                y+=x[i] + '.'
+            elif i == 8:
+                y+=x[i] + '-'
+            else:
+                y+=x[i]
+    in3.delete(0, 'end')
+    in3.insert(0, y)
+
 
 var = IntVar()
 
@@ -55,9 +102,11 @@ in2 = Entry(fr1, font="Arial 16")
 
 lb4 = Label(fr1, text='CPF:', font="Calibri 16")
 in3 = Entry(fr1, font="Arial 16")
+in3.bind("<KeyRelease>", capitura)
 
-lb5 = Label(fr1, text='Idade:', font="Calibri 16")
+lb5 = Label(fr1, text='Data:', font="Calibri 16")
 in4 = Entry(fr1, font="Arial 16")
+in4.bind("<KeyRelease>", data)
 
 lb6 = Label(fr1, text='Sexo: ', font="Calibri 16")
 c1 = Checkbutton(fr1, text='Masculino',variable=var, onvalue=1, offvalue=0)
@@ -78,6 +127,9 @@ in_3 = Entry(fr2, font="Arial 16")
 
 lb_5 = Label(fr2, text='Número:', font="Calibri 16")
 in_4 = Entry(fr2, font="Arial 16")
+
+lb_6 = Label(fr2, text='UF:', font="Calibri 16")
+in_5 = Entry(fr2, font="Arial 16")
 
 #---Frame 3---
 
@@ -136,6 +188,9 @@ in_3.grid(row=4, column=2, sticky=NSEW)
 
 lb_5.grid(row=5, column=1, sticky=NSEW)
 in_4.grid(row=5, column=2, sticky=NSEW)
+
+lb_6.grid(row=6, column=1, sticky=NSEW)
+in_5.grid(row=6, column=2, sticky=NSEW)
 
 #---Frame 3---
 
